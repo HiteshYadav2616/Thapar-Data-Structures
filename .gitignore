@@ -1,0 +1,62 @@
+# =========================
+# C++ compiled files
+# =========================
+
+*.exe
+*.out
+*.o
+*.obj
+*.a
+*.lib
+*.dll
+*.pdb
+
+# =========================
+# Build folders
+# =========================
+
+build/
+bin/
+obj/
+Debug/
+Release/
+
+# =========================
+# VS Code
+# =========================
+
+.vscode/
+
+# =========================
+# CMake
+# =========================
+
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+compile_commands.json
+
+# =========================
+# Temporary files
+# =========================
+
+*.tmp
+*.temp
+*.log
+*.swp
+*.swo
+*~
+
+# =========================
+# Windows
+# =========================
+
+Thumbs.db
+Desktop.ini
+
+# =========================
+# macOS
+# =========================
+
+.DS_Store

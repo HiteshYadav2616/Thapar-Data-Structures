@@ -1,3 +1,5 @@
+/*3) Design the logic of a program to rotate a 1-D array by K-positions*/
+
 #include <iostream>
 #include <string>
 using namespace std;

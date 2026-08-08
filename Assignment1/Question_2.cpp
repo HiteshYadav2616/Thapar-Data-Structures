@@ -1,3 +1,6 @@
+/*2) Design the logic to remove the duplicate elements from any array and
+ after the deletion the array should contain the unique elements.*/
+
 #include <iostream>
 #include <set>
 using namespace std;

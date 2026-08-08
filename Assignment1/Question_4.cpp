@@ -1,3 +1,8 @@
+/*4) Implement the logic to
+a. Reverse the elements of an array
+b. find the matrix multiplication
+c. find the transpose of a matrix*/
+
 #include <iostream>
 using namespace std;
 

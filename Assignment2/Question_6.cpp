@@ -12,9 +12,9 @@ void matrixDisplay(Triplet* t, int size) {
     int row = t[0].row;
     int col = t[0].col;
     int k = 1;
-     for(int i=1; i<row; i++) {
-        for(int j=1; j<col; j++) {
-            if(i==t[k].row && j==t[k].col && k<size) {
+     for(int i=0; i<row; i++) {
+        for(int j=0; j<col; j++) {
+            if(k<size && i==t[k].row && j==t[k].col) {
                 cout << t[k].val << " ";
                 k++;
             } else {
@@ -32,17 +32,20 @@ void tripletDisplay(Triplet* t, int size) {
 }
 
 void sortTriplet(Triplet* t, int size) {
-    for(int i=1; i<t[0].row-1; i++) {
-        for(int j=1; j<t[0].col-1-i; j++) {
-            if(t[j].row > t[j+1].row) {
+    for(int i = 1; i < size - 1; i++) {
+        for(int j = 1; j < size - i; j++) {
+
+            if(t[j].row > t[j+1].row ||
+              (t[j].row == t[j+1].row && t[j].col > t[j+1].col)) {
+
                 Triplet temp = t[j];
                 t[j] = t[j+1];
                 t[j+1] = temp;
             }
         }
-        tripletDisplay(t, size);
     }
 }
+
 void transpose(Triplet* t,int size) {
     Triplet* temp = new Triplet[size];
 
@@ -52,8 +55,10 @@ void transpose(Triplet* t,int size) {
         temp[i].val = t[i].val;
     }
     sortTriplet(temp, size);
-    //tripletDisplay(temp, size);
-    //matrixDisplay(temp, size);
+    cout << "\nTranspose:\n";
+    tripletDisplay(temp, size);
+
+    delete[] temp;
 }
 
 void addition(Triplet* t, int size, Triplet* t1, int size2) {
@@ -116,6 +121,8 @@ int main() {
         cout << "Enter value:";
         cin >> t[i].val;
     }
+
+    tripletDisplay(t, size);
 
     int option;
     cout << "\n1. Transpose of Sparse matrix\n2. Addition of Sparse matrix\n3. Multiplication of Sparse matrix\n>>Choose option:";
